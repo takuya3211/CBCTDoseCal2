@@ -19,7 +19,7 @@ class CBCTDoseCal2 {
 	}
   
    public static void doIt(){
-	   //testtesttest
+	   //test
 	   try {
        	int j = 0;
        	for(j = 0; j <listFile.length; j ++){
