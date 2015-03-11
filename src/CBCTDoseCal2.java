@@ -23,7 +23,7 @@ class CBCTDoseCal2 {
 	   try {
        	int j = 0;
        	for(j = 0; j <listFile.length; j ++){
-       		 FileInputStream input = new FileInputStream(listFile[j].getAbsolutePath());
+       			FileInputStream input = new FileInputStream(listFile[j].getAbsolutePath());
 	            //FileInputStream input2 = new FileInputStream(listFile[j].getAbsolutePath());
 	            String toFile = targetDir+"/make/"+ listFile[j].getName();
 	            FileOutputStream output = new FileOutputStream(toFile);
@@ -75,32 +75,32 @@ class CBCTDoseCal2 {
 		            
 		            
 		           //‚±‚±‚©‚ç‚ª‰æ‘œ‚Ì—Ìˆæ‚Ìˆ—
-		            while((len=input.read(buf))!=-1){
-				            //  if(i <= 100) System.out.println(bytetoHex(buf[0]) + " "  + bytetoHex(buf[1]));
-				         
-			            int pixelValue =  exchangeToInt(bytetoHex(buf[0]),bytetoHex(buf[1]));
-			            //if(i > 1134) System.out.println(pixelValue);
-			            byte[] newpixelValue= new byte[2];
-			            newpixelValue = pixelValueOverride(pixelValue,airThreshold, lungThreshold, waterThreshold, boneThreshold); 
-			            buf[0] = newpixelValue[0];
-			            buf[1] = newpixelValue[1];
-			            output.write(buf,0,len);
-		            }
-		           output.write(0x00);
-		           output.write(0x00);
-		           //‚±‚±‚Ü‚Å‚ª‰æ‘œ‚Ì—Ìˆæ‚Ìˆ—
+	            while((len=input.read(buf))!=-1){
+			            //  if(i <= 100) System.out.println(bytetoHex(buf[0]) + " "  + bytetoHex(buf[1]));
+			         
+		            int pixelValue =  exchangeToInt(bytetoHex(buf[0]),bytetoHex(buf[1]));
+		            //if(i > 1134) System.out.println(pixelValue);
+		            byte[] newpixelValue= new byte[2];
+		            newpixelValue = pixelValueOverride(pixelValue,airThreshold, lungThreshold, waterThreshold, boneThreshold); 
+		            buf[0] = newpixelValue[0];
+		            buf[1] = newpixelValue[1];
+		            output.write(buf,0,len);
+	            }
+	           output.write(0x00);
+	           output.write(0x00);
+	           //‚±‚±‚Ü‚Å‚ª‰æ‘œ‚Ì—Ìˆæ‚Ìˆ—
    
 		            
-		            output.flush();
-		            output.close();
-		            input.close();
-		            //input2.close();
-		            System.out.println(j+1 + "/" + listFile.length);
+	            output.flush();
+	            output.close();
+	            input.close();
+	            //input2.close();
+	            System.out.println(j+1 + "/" + listFile.length);
 
-	        	}
-	        } catch (IOException e) {
-	            System.out.println(e);
-	        }
+        	}
+        } catch (IOException e) {
+            System.out.println(e);
+        }
    }
    
    public static void doItKeikaku(){
