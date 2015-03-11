@@ -9,7 +9,7 @@ class CBCTDoseCal2 {
 	static int waterThreshold = 1100;
 	static int boneThreshold = 1300;
 	//static File targetDir = new File("c:/pic/");
-	static File targetDir = new File("/Users/takuya/Dropbox/program/workspace/CBCTDoseCal/pic/");
+	static File targetDir = new File("/Users/takuya/Dropbox/program/workspace/CBCTDoseCal2/pic/");
 	String targetFile = null;
 	static File [] listFile = targetDir.listFiles(getFileExtensionFilter(".dcm")); //*.dcm‚¾‚¯‚ðƒŠƒXƒg‚É‚·‚é
 	
